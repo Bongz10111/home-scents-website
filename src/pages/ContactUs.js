@@ -1,26 +1,30 @@
+import React from 'react';
+import { Form, Button } from 'react-bootstrap';
+
 function ContactUs() {
-    return (
-      <div className="text-center">
-        <h2>Contact Us</h2>
-        <p className="mt-3">We would love to hear from you!</p>
-        <p>Email us at: <a href="mailto:homescentsza@example.com">homescentsza@example.com</a></p>
-        <p>WhatsApp us: <a href="https://wa.me/27710000000">+27 71 000 0000</a></p>
-  
-        <form className="mt-4" style={{ maxWidth: '500px', margin: '0 auto' }}>
-          <div className="mb-3">
-            <input type="text" className="form-control" placeholder="Your Name" required />
-          </div>
-          <div className="mb-3">
-            <input type="email" className="form-control" placeholder="Your Email" required />
-          </div>
-          <div className="mb-3">
-            <textarea className="form-control" placeholder="Your Message" rows="4" required></textarea>
-          </div>
-          <button type="submit" className="btn btn-dark w-100">Send Message</button>
-        </form>
-      </div>
-    );
-  }
-  
-  export default ContactUs;
-  
+  return (
+    <div className="container my-5" style={{ maxWidth: '600px' }}>
+      <h2 className="text-center" style={{ color: '#d63384' }}>Contact Us</h2>
+      <Form className="mt-4">
+        <Form.Group className="mb-3" controlId="formName">
+          <Form.Label>Name</Form.Label>
+          <Form.Control type="text" placeholder="Enter your name" required />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control type="email" placeholder="Enter your email" required />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formMessage">
+          <Form.Label>Message</Form.Label>
+          <Form.Control as="textarea" rows={3} placeholder="Your message..." required />
+        </Form.Group>
+        <Button variant="danger" type="submit" style={{ backgroundColor: '#d63384', border: 'none' }}>
+          Send Message
+        </Button>
+      </Form>
+      <p className="mt-4 text-center">You can also email us directly at: <strong>homescentsza@gmail.com</strong></p>
+    </div>
+  );
+}
+
+export default ContactUs;
